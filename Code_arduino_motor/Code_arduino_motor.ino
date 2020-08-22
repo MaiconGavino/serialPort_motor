@@ -10,36 +10,23 @@ void setup()
 
 void loop() 
 {
-  int recebido = Serial.parseInt();
-  if(recebido == 1){
-    ouo = 1;
-  }
-   if(recebido == 2)
+  if(Serial.available())
   {
-    ouo = 2;
-  }
-   if( recebido == 0){
-    ouo = 0;
-  }
-
-
-  
-  while(ouo == 1)
-  {
-    digitalWrite(pinOut2, LOW);
-    digitalWrite(pinOut1, HIGH);
-  }
-   while(ouo == 2)
-  {
-    digitalWrite(pinOut1, LOW);
-    digitalWrite(pinOut2,LOW);
-    delay(10   );
-    digitalWrite(pinOut1, LOW);
-    digitalWrite(pinOut2,HIGH);
-  }
-   while(ouo == 0)
-  {
-    digitalWrite(pinOut2, LOW);
-    digitalWrite(pinOut1, LOW);
+    const int recebido = Serial.parseInt();
+    if(recebido == 1)
+    {
+      digitalWrite(pinOut1, HIGH);
+      digitalWrite(pinOut2, LOW);
+    }
+    else if(recebido == 2)
+    {
+      digitalWrite(pinOut2, HIGH);
+      digitalWrite(pinOut1, LOW);
+    }
+    else
+    {
+      digitalWrite(pinOut1, LOW);
+      digitalWrite(pinOut2, LOW);
+    }
   }
 }
