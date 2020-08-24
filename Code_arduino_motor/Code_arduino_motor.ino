@@ -1,6 +1,5 @@
 #define pinOut1 13
 #define pinOut2 12
-int ouo = 0;
 void setup() 
 {
   pinMode(pinOut1, OUTPUT);
@@ -10,9 +9,9 @@ void setup()
 
 void loop() 
 {
+  const int recebido = Serial.parseInt();
   if(Serial.available())
   {
-    const int recebido = Serial.parseInt();
     if(recebido == 1)
     {
       digitalWrite(pinOut1, HIGH);
@@ -27,6 +26,7 @@ void loop()
     {
       digitalWrite(pinOut1, LOW);
       digitalWrite(pinOut2, LOW);
-    }
+    } 
   }
+  
 }
