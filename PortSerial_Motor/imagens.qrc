@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>falha.png</file>
+        <file>falha-off.png</file>
+        <file>quadro.png</file>
+        <file>start-off.png</file>
+        <file>start.png</file>
+        <file>stop.png</file>
+        <file>stop-off.png</file>
+    </qresource>
+</RCC>
