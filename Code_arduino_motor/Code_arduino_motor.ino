@@ -14,11 +14,17 @@ void loop()
   {
     if(recebido == 1)
     {
+      digitalWrite(pinOut1, LOW);
+      digitalWrite(pinOut2, LOW);
+      delay(500);
       digitalWrite(pinOut1, HIGH);
       digitalWrite(pinOut2, LOW);
     }
     else if(recebido == 2)
     {
+      digitalWrite(pinOut1, LOW);
+      digitalWrite(pinOut2, LOW);
+      delay(500);
       digitalWrite(pinOut2, HIGH);
       digitalWrite(pinOut1, LOW);
     }

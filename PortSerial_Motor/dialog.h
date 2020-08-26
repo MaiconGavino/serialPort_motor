@@ -2,6 +2,7 @@
 #define DIALOG_H
 
 #include <QDialog>
+#include <QtSerialPort/QSerialPort>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Dialog; }
@@ -17,5 +18,11 @@ public:
 
 private:
     Ui::Dialog *ui;
+    QSerialPort *arduino;
+    static const quint16 arduino_uno_vendor_id = 6790;
+    static const quint16 arduino_uno_product_id = 29987;
+    QString arduino_port_name;
+    bool arduino_is_available;
+
 };
 #endif // DIALOG_H

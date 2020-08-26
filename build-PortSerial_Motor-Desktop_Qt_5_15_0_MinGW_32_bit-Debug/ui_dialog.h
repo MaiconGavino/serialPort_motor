@@ -32,18 +32,20 @@ public:
     QLabel *label_4;
     QLabel *label_5;
     QPushButton *stop;
+    QPushButton *sent;
+    QLabel *label_6;
 
     void setupUi(QDialog *Dialog)
     {
         if (Dialog->objectName().isEmpty())
             Dialog->setObjectName(QString::fromUtf8("Dialog"));
-        Dialog->resize(660, 397);
+        Dialog->resize(660, 471);
         label = new QLabel(Dialog);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(50, -10, 551, 51));
+        label->setGeometry(QRect(-20, -10, 691, 51));
         QFont font;
         font.setFamily(QString::fromUtf8("Arial Black"));
-        font.setPointSize(18);
+        font.setPointSize(16);
         font.setBold(true);
         font.setWeight(75);
         label->setFont(font);
@@ -56,7 +58,7 @@ public:
         line->setFrameShadow(QFrame::Sunken);
         start = new QPushButton(Dialog);
         start->setObjectName(QString::fromUtf8("start"));
-        start->setGeometry(QRect(20, 190, 91, 91));
+        start->setGeometry(QRect(30, 260, 101, 91));
         start->setStyleSheet(QString::fromUtf8("#start {\n"
 "background-color: transparent;\n"
 "border-image: url(:start-off.png);\n"
@@ -70,7 +72,7 @@ public:
 "}"));
         falha = new QPushButton(Dialog);
         falha->setObjectName(QString::fromUtf8("falha"));
-        falha->setGeometry(QRect(20, 70, 91, 91));
+        falha->setGeometry(QRect(30, 70, 101, 91));
         falha->setStyleSheet(QString::fromUtf8("#falha {\n"
 "background-color: transparent;\n"
 "border-image: url(:falha-off.png);\n"
@@ -84,7 +86,7 @@ public:
 "}"));
         label_2 = new QLabel(Dialog);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(20, 170, 91, 16));
+        label_2->setGeometry(QRect(0, 240, 151, 20));
         QFont font1;
         font1.setFamily(QString::fromUtf8("Arial Black"));
         font1.setPointSize(9);
@@ -94,12 +96,12 @@ public:
         label_2->setAlignment(Qt::AlignCenter);
         label_3 = new QLabel(Dialog);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(20, 50, 91, 16));
+        label_3->setGeometry(QRect(0, 50, 161, 20));
         label_3->setFont(font1);
         label_3->setAlignment(Qt::AlignCenter);
         lcdNumber = new QLCDNumber(Dialog);
         lcdNumber->setObjectName(QString::fromUtf8("lcdNumber"));
-        lcdNumber->setGeometry(QRect(20, 310, 91, 81));
+        lcdNumber->setGeometry(QRect(10, 390, 131, 61));
         QPalette palette;
         QBrush brush(QColor(0, 0, 255, 255));
         brush.setStyle(Qt::SolidPattern);
@@ -148,12 +150,12 @@ public:
         lcdNumber->setPalette(palette);
         label_4 = new QLabel(Dialog);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(20, 290, 91, 16));
+        label_4->setGeometry(QRect(20, 360, 121, 20));
         label_4->setFont(font1);
         label_4->setAlignment(Qt::AlignCenter);
         label_5 = new QLabel(Dialog);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(550, 50, 91, 41));
+        label_5->setGeometry(QRect(540, 50, 111, 41));
         label_5->setFont(font1);
         label_5->setTextFormat(Qt::AutoText);
         label_5->setScaledContents(true);
@@ -161,7 +163,7 @@ public:
         label_5->setWordWrap(true);
         stop = new QPushButton(Dialog);
         stop->setObjectName(QString::fromUtf8("stop"));
-        stop->setGeometry(QRect(540, 80, 101, 91));
+        stop->setGeometry(QRect(540, 90, 101, 91));
         stop->setStyleSheet(QString::fromUtf8("#stop {\n"
 "background-color: transparent;\n"
 "border-image: url(:stop-off.png);\n"
@@ -173,6 +175,24 @@ public:
 "{\n"
 "   border-image: url(:stop.png);\n"
 "}"));
+        sent = new QPushButton(Dialog);
+        sent->setObjectName(QString::fromUtf8("sent"));
+        sent->setGeometry(QRect(20, 200, 93, 31));
+        sent->setStyleSheet(QString::fromUtf8("#sent {\n"
+"background-color: transparent;\n"
+"border-image: url(:sent-off.png);\n"
+"background: none;\n"
+"border: none;\n"
+"background-repeat: none;\n"
+"}\n"
+"#sent:pressed\n"
+"{\n"
+"   border-image: url(:sent.png);\n"
+"}"));
+        label_6 = new QLabel(Dialog);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setGeometry(QRect(10, 170, 141, 16));
+        label_6->setFont(font1);
 
         retranslateUi(Dialog);
 
@@ -190,6 +210,8 @@ public:
         label_4->setText(QCoreApplication::translate("Dialog", "RPM Motor A", nullptr));
         label_5->setText(QCoreApplication::translate("Dialog", "Parada de Emerg\303\252ncia", nullptr));
         stop->setText(QString());
+        sent->setText(QString());
+        label_6->setText(QCoreApplication::translate("Dialog", "Sentido Motor A", nullptr));
     } // retranslateUi
 
 };

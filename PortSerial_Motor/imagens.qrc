@@ -7,5 +7,7 @@
         <file>start.png</file>
         <file>stop.png</file>
         <file>stop-off.png</file>
+        <file>sent-off.png</file>
+        <file>sent.png</file>
     </qresource>
 </RCC>

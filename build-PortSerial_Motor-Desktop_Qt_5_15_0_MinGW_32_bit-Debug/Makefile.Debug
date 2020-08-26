@@ -474,14 +474,14 @@ debug/dialog.o: ../PortSerial_Motor/dialog.cpp ../PortSerial_Motor/dialog.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qinputmethod.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QFrame \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qframe.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QLCDNumber \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qlcdnumber.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QLabel \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qlabel.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QPushButton \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtGui/qicon.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QMessageBox \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qmessagebox.h
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/qicon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\dialog.o ..\PortSerial_Motor\dialog.cpp
 
 debug/qrc_imagens.o: debug/qrc_imagens.cpp 

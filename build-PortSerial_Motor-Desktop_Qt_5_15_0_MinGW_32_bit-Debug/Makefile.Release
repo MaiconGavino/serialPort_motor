@@ -106,7 +106,9 @@ release/qrc_imagens.cpp: ../PortSerial_Motor/imagens.qrc \
 		C:/Qt/5.15.0/mingw81_32/bin/rcc.exe \
 		../PortSerial_Motor/stop.png \
 		../PortSerial_Motor/start-off.png \
+		../PortSerial_Motor/sent-off.png \
 		../PortSerial_Motor/quadro.png \
+		../PortSerial_Motor/sent.png \
 		../PortSerial_Motor/falha-off.png \
 		../PortSerial_Motor/start.png \
 		../PortSerial_Motor/falha.png \
@@ -117,7 +119,9 @@ release/qrc_imagens.cpp: ../PortSerial_Motor/imagens.qrc \
 		C:/Qt/5.15.0/mingw81_32/bin/rcc.exe \
 		../PortSerial_Motor/stop.png \
 		../PortSerial_Motor/start-off.png \
+		../PortSerial_Motor/sent-off.png \
 		../PortSerial_Motor/quadro.png \
+		../PortSerial_Motor/sent.png \
 		../PortSerial_Motor/falha-off.png \
 		../PortSerial_Motor/start.png \
 		../PortSerial_Motor/falha.png \
@@ -495,14 +499,14 @@ release/dialog.o: ../PortSerial_Motor/dialog.cpp ../PortSerial_Motor/dialog.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtGui/qinputmethod.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QFrame \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qframe.h \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QLCDNumber \
+		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qlcdnumber.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QLabel \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qlabel.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QPushButton \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qpushbutton.h \
 		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qabstractbutton.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtGui/qicon.h \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/QMessageBox \
-		C:/Qt/5.15.0/mingw81_32/include/QtWidgets/qmessagebox.h
+		C:/Qt/5.15.0/mingw81_32/include/QtGui/qicon.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\dialog.o ..\PortSerial_Motor\dialog.cpp
 
 release/qrc_imagens.o: release/qrc_imagens.cpp 
