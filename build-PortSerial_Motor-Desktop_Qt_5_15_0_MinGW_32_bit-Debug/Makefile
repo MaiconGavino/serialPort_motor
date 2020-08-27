@@ -274,6 +274,7 @@ Makefile: ../PortSerial_Motor/PortSerial_Motor.pro C:/Qt/5.15.0/mingw81_32/mkspe
 		../PortSerial_Motor/PortSerial_Motor.pro \
 		C:/Qt/5.15.0/mingw81_32/lib/Qt5Widgets.prl \
 		C:/Qt/5.15.0/mingw81_32/lib/Qt5Gui.prl \
+		C:/Qt/5.15.0/mingw81_32/lib/Qt5SerialPort.prl \
 		C:/Qt/5.15.0/mingw81_32/lib/Qt5Core.prl \
 		C:/Qt/5.15.0/mingw81_32/lib/qtmain.prl \
 		C:/Qt/5.15.0/mingw81_32/mkspecs/features/build_pass.prf \
@@ -483,6 +484,7 @@ C:/Qt/5.15.0/mingw81_32/mkspecs/features/lex.prf:
 ../PortSerial_Motor/PortSerial_Motor.pro:
 C:/Qt/5.15.0/mingw81_32/lib/Qt5Widgets.prl:
 C:/Qt/5.15.0/mingw81_32/lib/Qt5Gui.prl:
+C:/Qt/5.15.0/mingw81_32/lib/Qt5SerialPort.prl:
 C:/Qt/5.15.0/mingw81_32/lib/Qt5Core.prl:
 C:/Qt/5.15.0/mingw81_32/lib/qtmain.prl:
 C:/Qt/5.15.0/mingw81_32/mkspecs/features/build_pass.prf:

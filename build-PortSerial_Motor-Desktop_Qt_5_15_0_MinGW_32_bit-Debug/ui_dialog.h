@@ -59,31 +59,17 @@ public:
         start = new QPushButton(Dialog);
         start->setObjectName(QString::fromUtf8("start"));
         start->setGeometry(QRect(30, 260, 101, 91));
-        start->setStyleSheet(QString::fromUtf8("#start {\n"
-"background-color: transparent;\n"
-"border-image: url(:start-off.png);\n"
-"background: none;\n"
-"border: none;\n"
-"background-repeat: none;\n"
-"}\n"
-"#start:pressed\n"
-"{\n"
-"   border-image: url(:start.png);\n"
-"}"));
+        start->setStyleSheet(QString::fromUtf8(""));
+        start->setIconSize(QSize(101, 91));
+        start->setAutoDefault(false);
+        start->setFlat(true);
         falha = new QPushButton(Dialog);
         falha->setObjectName(QString::fromUtf8("falha"));
         falha->setGeometry(QRect(30, 70, 101, 91));
-        falha->setStyleSheet(QString::fromUtf8("#falha {\n"
-"background-color: transparent;\n"
-"border-image: url(:falha-off.png);\n"
-"background: none;\n"
-"border: none;\n"
-"background-repeat: none;\n"
-"}\n"
-"#falha:pressed\n"
-"{\n"
-"   border-image: url(:falha.png);\n"
-"}"));
+        falha->setStyleSheet(QString::fromUtf8(""));
+        falha->setIconSize(QSize(101, 91));
+        falha->setAutoDefault(false);
+        falha->setFlat(true);
         label_2 = new QLabel(Dialog);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(0, 240, 151, 20));
@@ -164,37 +150,29 @@ public:
         stop = new QPushButton(Dialog);
         stop->setObjectName(QString::fromUtf8("stop"));
         stop->setGeometry(QRect(540, 90, 101, 91));
-        stop->setStyleSheet(QString::fromUtf8("#stop {\n"
-"background-color: transparent;\n"
-"border-image: url(:stop-off.png);\n"
-"background: none;\n"
-"border: none;\n"
-"background-repeat: none;\n"
-"}\n"
-"#stop:pressed\n"
-"{\n"
-"   border-image: url(:stop.png);\n"
-"}"));
+        stop->setStyleSheet(QString::fromUtf8(""));
+        stop->setIconSize(QSize(101, 91));
+        stop->setAutoDefault(false);
+        stop->setFlat(true);
         sent = new QPushButton(Dialog);
         sent->setObjectName(QString::fromUtf8("sent"));
         sent->setGeometry(QRect(20, 200, 93, 31));
-        sent->setStyleSheet(QString::fromUtf8("#sent {\n"
-"background-color: transparent;\n"
-"border-image: url(:sent-off.png);\n"
-"background: none;\n"
-"border: none;\n"
-"background-repeat: none;\n"
-"}\n"
-"#sent:pressed\n"
-"{\n"
-"   border-image: url(:sent.png);\n"
-"}"));
+        sent->setStyleSheet(QString::fromUtf8(""));
+        sent->setIconSize(QSize(91, 31));
+        sent->setCheckable(false);
+        sent->setChecked(false);
+        sent->setAutoDefault(false);
+        sent->setFlat(true);
         label_6 = new QLabel(Dialog);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setGeometry(QRect(10, 170, 141, 16));
         label_6->setFont(font1);
 
         retranslateUi(Dialog);
+
+        falha->setDefault(false);
+        sent->setDefault(false);
+
 
         QMetaObject::connectSlotsByName(Dialog);
     } // setupUi

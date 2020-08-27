@@ -25,8 +25,8 @@ void loop()
       digitalWrite(pinOut1, LOW);
       digitalWrite(pinOut2, LOW);
       delay(500);
-      digitalWrite(pinOut2, HIGH);
       digitalWrite(pinOut1, LOW);
+      digitalWrite(pinOut2, HIGH);
     }
     else
     {

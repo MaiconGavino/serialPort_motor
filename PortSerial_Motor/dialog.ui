@@ -63,20 +63,22 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">#start {
-background-color: transparent;
-border-image: url(:start-off.png);
-background: none;
-border: none;
-background-repeat: none;
-}
-#start:pressed
-{
-   border-image: url(:start.png);
-}</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>101</width>
+     <height>91</height>
+    </size>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="falha">
@@ -89,20 +91,25 @@ background-repeat: none;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">#falha {
-background-color: transparent;
-border-image: url(:falha-off.png);
-background: none;
-border: none;
-background-repeat: none;
-}
-#falha:pressed
-{
-   border-image: url(:falha.png);
-}</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>101</width>
+     <height>91</height>
+    </size>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+   <property name="default">
+    <bool>false</bool>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_2">
@@ -510,20 +517,22 @@ background-repeat: none;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">#stop {
-background-color: transparent;
-border-image: url(:stop-off.png);
-background: none;
-border: none;
-background-repeat: none;
-}
-#stop:pressed
-{
-   border-image: url(:stop.png);
-}</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>101</width>
+     <height>91</height>
+    </size>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="sent">
@@ -536,20 +545,31 @@ background-repeat: none;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">#sent {
-background-color: transparent;
-border-image: url(:sent-off.png);
-background: none;
-border: none;
-background-repeat: none;
-}
-#sent:pressed
-{
-   border-image: url(:sent.png);
-}</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>91</width>
+     <height>31</height>
+    </size>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+   <property name="default">
+    <bool>false</bool>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="label_6">
