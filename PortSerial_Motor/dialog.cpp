@@ -15,18 +15,21 @@ Dialog::Dialog(QWidget *parent)
     falhaoff.addFile(":/falha.png");
     falha->addFile(":/falha-off.png");
     ui->falha->setIcon(*falha);
+    ui->falhaB->setIcon(*falha);
     estadoFalha = false;
 
     //adicionando a função Sentido;
     sentidoOff.addFile(":/sent.png");
     sentido->addFile(":/sent-off.png");
     ui->sent->setIcon(*sentido);
+    ui->sentB->setIcon(*sentido);
     estadoSent = false;
 
     //adicionando a função start;
     startOff.addFile(":/start.png");
     start->addFile(":/start-off.png");
     ui->start->setIcon(*start);
+    ui->startB->setIcon(*start);
     estadoStart = false;
 
     //adicionando a função stop;
@@ -39,10 +42,10 @@ Dialog::Dialog(QWidget *parent)
     pareOff.addFile(":/pare.png");
     pare->addFile(":/pareOff.png");
     ui->pare->setIcon(*pare);
+    ui->pareB->setIcon(*pare);
     estadoPare = false;
-
     acaoStop = 0;
-
+    contOn = 0;
     arduino = new QSerialPort(this);
 
     // Identificar a porta, o ID do fornecedor e o ID do produto
@@ -115,38 +118,38 @@ void Dialog::readSerial()
 //Função sentido do motor
 void Dialog::on_sent_clicked()
 {
-    if(!estadoSent)
-    {
-        ui->sent->setIcon(sentidoOff);
-        estadoSent = true;
-        startMotor = 1;
-    }
-    else
-    {
-        ui->sent->setIcon(*sentido);
-        estadoSent = false;
-        startMotor = 2;
-    }
+       if(!estadoSent)
+        {
+            ui->sent->setIcon(sentidoOff);
+            estadoSent = true;
+            startMotor = 1;
+        }
+        else
+        {
+            ui->sent->setIcon(*sentido);
+            estadoSent = false;
+            startMotor = 2;
+        }
 }
 
 
 //Função Falha no sistema
 void Dialog::on_falha_clicked()
 {
-    if(!estadoFalha)
-    {
-        ui->falha->setIcon(falhaoff);
-        estadoFalha = true;
-        if(Falha_erro=="1")
-        {
-            ui->falha->setIcon(*falha);
-        }
-    }
-    else
-    {
-        ui->falha->setIcon(*falha);
-        estadoFalha = false;
-    }
+//    if(!estadoFalha)
+//    {
+//        ui->falha->setIcon(falhaoff);
+//        estadoFalha = true;
+//        if(Falha_erro==1)
+//        {
+//            ui->falha->setIcon(*falha);
+//        }
+//    }
+//    else
+//    {
+//        ui->falha->setIcon(*falha);
+//        estadoFalha = false;
+//    }
 }
 
 
@@ -189,6 +192,7 @@ void Dialog::on_start_clicked()
             if(startMotor==1)
             {
                 arduino->write("1\n");
+                ui->sent->setIcon(sentidoOff);
             }
             else
             {
@@ -198,7 +202,9 @@ void Dialog::on_start_clicked()
         }
         else
         {
-              Falha_erro = "1";
+              ui->falha->setIcon(falhaoff);
+              ui->start->setIcon(*start);
+              ui->pare -> setIcon(*pare);
               qDebug() << "erro na porta serial";
         }
     }
@@ -221,6 +227,7 @@ void Dialog::on_pare_clicked()
         {
             ui->pare->setIcon(*pare);
             ui->start->setIcon(*start);
+            ui->falha->setIcon(*falha);
         }
 
         estadoPare = false;

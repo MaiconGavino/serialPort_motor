@@ -36,6 +36,16 @@ public:
     QLabel *label_6;
     QPushButton *pare;
     QLabel *label_7;
+    QLabel *LabelFalha;
+    QPushButton *falhaB;
+    QLabel *label_8;
+    QPushButton *sentB;
+    QLabel *label_9;
+    QPushButton *startB;
+    QLabel *label_10;
+    QLCDNumber *lcdNumber_2;
+    QLabel *label_11;
+    QPushButton *pareB;
 
     void setupUi(QDialog *Dialog)
     {
@@ -179,6 +189,85 @@ public:
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setGeometry(QRect(20, 460, 121, 16));
         label_7->setFont(font1);
+        LabelFalha = new QLabel(Dialog);
+        LabelFalha->setObjectName(QString::fromUtf8("LabelFalha"));
+        LabelFalha->setGeometry(QRect(270, 50, 121, 16));
+        LabelFalha->setFont(font1);
+        falhaB = new QPushButton(Dialog);
+        falhaB->setObjectName(QString::fromUtf8("falhaB"));
+        falhaB->setGeometry(QRect(270, 70, 101, 91));
+        falhaB->setIconSize(QSize(101, 91));
+        falhaB->setAutoDefault(false);
+        falhaB->setFlat(true);
+        label_8 = new QLabel(Dialog);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setGeometry(QRect(260, 170, 141, 16));
+        label_8->setFont(font1);
+        sentB = new QPushButton(Dialog);
+        sentB->setObjectName(QString::fromUtf8("sentB"));
+        sentB->setGeometry(QRect(280, 190, 93, 31));
+        sentB->setIconSize(QSize(93, 31));
+        sentB->setAutoDefault(false);
+        sentB->setFlat(true);
+        label_9 = new QLabel(Dialog);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+        label_9->setGeometry(QRect(260, 240, 131, 16));
+        label_9->setFont(font1);
+        label_9->setAlignment(Qt::AlignCenter);
+        startB = new QPushButton(Dialog);
+        startB->setObjectName(QString::fromUtf8("startB"));
+        startB->setGeometry(QRect(270, 260, 101, 93));
+        startB->setIconSize(QSize(101, 93));
+        startB->setAutoDefault(false);
+        startB->setFlat(true);
+        label_10 = new QLabel(Dialog);
+        label_10->setObjectName(QString::fromUtf8("label_10"));
+        label_10->setGeometry(QRect(260, 360, 131, 16));
+        label_10->setFont(font1);
+        label_10->setAlignment(Qt::AlignCenter);
+        lcdNumber_2 = new QLCDNumber(Dialog);
+        lcdNumber_2->setObjectName(QString::fromUtf8("lcdNumber_2"));
+        lcdNumber_2->setGeometry(QRect(260, 390, 131, 61));
+        QPalette palette1;
+        palette1.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        palette1.setBrush(QPalette::Active, QPalette::Light, brush1);
+        palette1.setBrush(QPalette::Active, QPalette::Dark, brush1);
+        palette1.setBrush(QPalette::Active, QPalette::Mid, brush1);
+        palette1.setBrush(QPalette::Active, QPalette::Text, brush2);
+        palette1.setBrush(QPalette::Active, QPalette::ButtonText, brush2);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette1.setBrush(QPalette::Active, QPalette::PlaceholderText, brush3);
+#endif
+        palette1.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::Light, brush1);
+        palette1.setBrush(QPalette::Inactive, QPalette::Dark, brush1);
+        palette1.setBrush(QPalette::Inactive, QPalette::Mid, brush1);
+        palette1.setBrush(QPalette::Inactive, QPalette::Text, brush2);
+        palette1.setBrush(QPalette::Inactive, QPalette::ButtonText, brush2);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette1.setBrush(QPalette::Inactive, QPalette::PlaceholderText, brush3);
+#endif
+        palette1.setBrush(QPalette::Disabled, QPalette::WindowText, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::Light, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::Dark, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::Mid, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::Text, brush1);
+        palette1.setBrush(QPalette::Disabled, QPalette::ButtonText, brush1);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 12, 0)
+        palette1.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush3);
+#endif
+        lcdNumber_2->setPalette(palette1);
+        label_11 = new QLabel(Dialog);
+        label_11->setObjectName(QString::fromUtf8("label_11"));
+        label_11->setGeometry(QRect(260, 460, 131, 21));
+        label_11->setFont(font1);
+        label_11->setAlignment(Qt::AlignCenter);
+        pareB = new QPushButton(Dialog);
+        pareB->setObjectName(QString::fromUtf8("pareB"));
+        pareB->setGeometry(QRect(270, 480, 101, 93));
+        pareB->setIconSize(QSize(101, 93));
+        pareB->setAutoDefault(false);
+        pareB->setFlat(true);
 
         retranslateUi(Dialog);
 
@@ -204,6 +293,15 @@ public:
         label_6->setText(QCoreApplication::translate("Dialog", "Sentido Motor A", nullptr));
         pare->setText(QString());
         label_7->setText(QCoreApplication::translate("Dialog", "STOP Motor A", nullptr));
+        LabelFalha->setText(QCoreApplication::translate("Dialog", "Falha Motor B", nullptr));
+        falhaB->setText(QString());
+        label_8->setText(QCoreApplication::translate("Dialog", "Sentido Motor B", nullptr));
+        sentB->setText(QString());
+        label_9->setText(QCoreApplication::translate("Dialog", "Start Motor B", nullptr));
+        startB->setText(QString());
+        label_10->setText(QCoreApplication::translate("Dialog", "RPM Motor B", nullptr));
+        label_11->setText(QCoreApplication::translate("Dialog", "STOP Motor B", nullptr));
+        pareB->setText(QString());
     } // retranslateUi
 
 };

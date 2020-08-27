@@ -32,7 +32,7 @@ public:
     QIcon pareOff;
     QIcon *pare = new QIcon();
     bool estadoPare;
-    QString Falha_erro;
+    int Falha_erro;
     int contOFF;
     int contOn;
     int acaoStop;
