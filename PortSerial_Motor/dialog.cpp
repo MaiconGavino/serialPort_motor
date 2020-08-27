@@ -35,9 +35,17 @@ Dialog::Dialog(QWidget *parent)
     ui->stop->setIcon(*stop);
     estadoStop = false;
 
+    //adicionando a função parar motor;
+    pareOff.addFile(":/pare.png");
+    pare->addFile(":/pareOff.png");
+    ui->pare->setIcon(*pare);
+    estadoPare = false;
+
+    acaoStop = 0;
+
     arduino = new QSerialPort(this);
 
-    /* Identificar a porta, o ID do fornecedor e o ID do produto
+    // Identificar a porta, o ID do fornecedor e o ID do produto
         qDebug() << "Porta Numero:" <<
                     QSerialPortInfo::availablePorts().length();
         foreach(const QSerialPortInfo &serialPortInfo, QSerialPortInfo::availablePorts())
@@ -53,7 +61,6 @@ Dialog::Dialog(QWidget *parent)
                 qDebug() << "Product ID: " << serialPortInfo.productIdentifier();
             }
         }
-    */
 
         foreach(const QSerialPortInfo &serialPortInfo, QSerialPortInfo::availablePorts())
         {
@@ -72,7 +79,7 @@ Dialog::Dialog(QWidget *parent)
             {
                 //abri e configurar o serial
                 arduino->setPortName(arduino_port_name);
-                arduino->open(QSerialPort::ReadOnly);
+                arduino->open(QSerialPort::WriteOnly);
                 arduino->setBaudRate(QSerialPort::Baud9600);
                 arduino->setDataBits(QSerialPort::Data8);
                 arduino->setParity(QSerialPort::NoParity);
@@ -105,26 +112,35 @@ void Dialog::readSerial()
 }
 
 
+//Função sentido do motor
 void Dialog::on_sent_clicked()
 {
     if(!estadoSent)
     {
         ui->sent->setIcon(sentidoOff);
         estadoSent = true;
+        startMotor = 1;
     }
     else
     {
         ui->sent->setIcon(*sentido);
         estadoSent = false;
+        startMotor = 2;
     }
 }
 
+
+//Função Falha no sistema
 void Dialog::on_falha_clicked()
 {
     if(!estadoFalha)
     {
         ui->falha->setIcon(falhaoff);
         estadoFalha = true;
+        if(Falha_erro=="1")
+        {
+            ui->falha->setIcon(*falha);
+        }
     }
     else
     {
@@ -133,30 +149,91 @@ void Dialog::on_falha_clicked()
     }
 }
 
+
+//Função Parar Sistema
 void Dialog::on_stop_clicked()
 {
     if(!estadoStop)
     {
         ui->stop->setIcon(stopOff);
         estadoStop = true;
+        if(arduino->isWritable())
+        {
+            arduino->write("0\n");
+            ui->start->setIcon(*start);
+            ui->pare->setIcon(*pare);
+            acaoStop = 1;
+        }
     }
     else
     {
         ui->stop->setIcon(*stop);
         estadoStop = false;
+        acaoStop = 0;
     }
 }
 
+
+//Função Ligar motor
 void Dialog::on_start_clicked()
 {
+    if(acaoStop == 0){
     if(!estadoStart)
     {
         ui->start->setIcon(startOff);
-        estadoStart = true;
+        estadoStart = false;
+        ui->pare->setIcon(pareOff);
+        contOn = 0;
+        if(arduino->isWritable())
+        {
+            if(startMotor==1)
+            {
+                arduino->write("1\n");
+            }
+            else
+            {
+                arduino->write("2\n");
+                qDebug() << "envio";
+            }
+        }
+        else
+        {
+              Falha_erro = "1";
+              qDebug() << "erro na porta serial";
+        }
     }
     else
     {
         ui->start->setIcon(*start);
-        estadoStart = false;
+        estadoStart = true;
+    }
+    }
+}
+
+
+
+// Função Parar Motor
+void Dialog::on_pare_clicked()
+{
+    if(!estadoPare)
+    {
+        if(contOn == 0)
+        {
+            ui->pare->setIcon(*pare);
+            ui->start->setIcon(*start);
+        }
+
+        estadoPare = false;
+        if(arduino->isWritable())
+        {
+            arduino->write("0\n");
+        }
+
+
+    }
+    else
+    {
+        ui->pare->setIcon(pareOff);
+        estadoPare = true;
     }
 }

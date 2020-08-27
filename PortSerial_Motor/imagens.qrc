@@ -9,5 +9,7 @@
         <file>stop-off.png</file>
         <file>sent-off.png</file>
         <file>sent.png</file>
+        <file>pare.png</file>
+        <file>pareOff.png</file>
     </qresource>
 </RCC>

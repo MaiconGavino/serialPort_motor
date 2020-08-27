@@ -28,6 +28,14 @@ public:
     QIcon stopOff;
     QIcon *stop = new QIcon();
     bool estadoStop;
+    int startMotor;
+    QIcon pareOff;
+    QIcon *pare = new QIcon();
+    bool estadoPare;
+    QString Falha_erro;
+    int contOFF;
+    int contOn;
+    int acaoStop;
 
 private slots:
     void on_sent_clicked();
@@ -39,6 +47,8 @@ private slots:
     void on_stop_clicked();
 
     void on_start_clicked();
+
+    void on_pare_clicked();
 
 private:
     Ui::Dialog *ui;

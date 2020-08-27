@@ -34,12 +34,14 @@ public:
     QPushButton *stop;
     QPushButton *sent;
     QLabel *label_6;
+    QPushButton *pare;
+    QLabel *label_7;
 
     void setupUi(QDialog *Dialog)
     {
         if (Dialog->objectName().isEmpty())
             Dialog->setObjectName(QString::fromUtf8("Dialog"));
-        Dialog->resize(660, 471);
+        Dialog->resize(660, 584);
         label = new QLabel(Dialog);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(-20, -10, 691, 51));
@@ -167,6 +169,16 @@ public:
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setGeometry(QRect(10, 170, 141, 16));
         label_6->setFont(font1);
+        pare = new QPushButton(Dialog);
+        pare->setObjectName(QString::fromUtf8("pare"));
+        pare->setGeometry(QRect(30, 480, 101, 91));
+        pare->setIconSize(QSize(101, 91));
+        pare->setAutoDefault(false);
+        pare->setFlat(true);
+        label_7 = new QLabel(Dialog);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setGeometry(QRect(20, 460, 121, 16));
+        label_7->setFont(font1);
 
         retranslateUi(Dialog);
 
@@ -190,6 +202,8 @@ public:
         stop->setText(QString());
         sent->setText(QString());
         label_6->setText(QCoreApplication::translate("Dialog", "Sentido Motor A", nullptr));
+        pare->setText(QString());
+        label_7->setText(QCoreApplication::translate("Dialog", "STOP Motor A", nullptr));
     } // retranslateUi
 
 };
