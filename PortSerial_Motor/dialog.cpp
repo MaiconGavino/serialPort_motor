@@ -1,3 +1,6 @@
+
+
+
 #include "dialog.h"
 #include "ui_dialog.h"
 #include <QMessageBox>
@@ -45,6 +48,7 @@ Dialog::Dialog(QWidget *parent)
     ui->pareB->setIcon(*pare);
     estadoPare = false;
     acaoStop = 0;
+    acaoStopB = 0;
     contOn = 0;
     arduino = new QSerialPort(this);
 
@@ -242,5 +246,43 @@ void Dialog::on_pare_clicked()
     {
         ui->pare->setIcon(pareOff);
         estadoPare = true;
+    }
+}
+
+void Dialog::on_startB_clicked()
+{
+    if(acaoStopB == 0){
+    if(!estadoStart)
+    {
+        ui->start->setIcon(startOff);
+        estadoStart = false;
+        ui->pare->setIcon(pareOff);
+        contOn = 0;
+        if(arduino->isWritable())
+        {
+            if(startMotor==3)
+            {
+                arduino->write("3\n");
+                ui->sent->setIcon(sentidoOff);
+            }
+            else
+            {
+                arduino->write("3\n");
+                qDebug() << "envio";
+            }
+        }
+        else
+        {
+              ui->falha->setIcon(falhaoff);
+              ui->start->setIcon(*start);
+              ui->pare -> setIcon(*pare);
+              qDebug() << "erro na porta serial";
+        }
+    }
+    else
+    {
+        ui->start->setIcon(*start);
+        estadoStart = true;
+    }
     }
 }

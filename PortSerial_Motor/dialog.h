@@ -36,6 +36,7 @@ public:
     int contOFF;
     int contOn;
     int acaoStop;
+    int acaoStopB;
 
 private slots:
     void on_sent_clicked();
@@ -49,6 +50,8 @@ private slots:
     void on_start_clicked();
 
     void on_pare_clicked();
+
+    void on_startB_clicked();
 
 private:
     Ui::Dialog *ui;
