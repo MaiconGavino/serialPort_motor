@@ -20,7 +20,7 @@ void loop()
       digitalWrite(pinOut1, HIGH);
       digitalWrite(pinOut2, LOW);
     }
-    else if(recebido == 4)
+    else if(recebido == 2)
     {
       digitalWrite(pinOut1, LOW);
       digitalWrite(pinOut2, LOW);

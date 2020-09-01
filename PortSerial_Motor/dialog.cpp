@@ -13,6 +13,8 @@ Dialog::Dialog(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::Dialog)
 {
+
+//====================Adição de componentes ================================
     ui->setupUi(this);
     //adicionando a função falha;
     falhaoff.addFile(":/falha.png");
@@ -51,6 +53,8 @@ Dialog::Dialog(QWidget *parent)
     acaoStopB = 0;
     contOn = 0;
     arduino = new QSerialPort(this);
+
+//====================Verificação de conexão ================================
 
     // Identificar a porta, o ID do fornecedor e o ID do produto
         qDebug() << "Porta Numero:" <<
@@ -118,6 +122,7 @@ void Dialog::readSerial()
     qDebug() << sent;
 }
 
+//====================configurações motores A ================================
 
 //Função sentido do motor
 void Dialog::on_sent_clicked()
@@ -136,25 +141,6 @@ void Dialog::on_sent_clicked()
         }
 }
 
-
-//Função Falha no sistema
-void Dialog::on_falha_clicked()
-{
-//    if(!estadoFalha)
-//    {
-//        ui->falha->setIcon(falhaoff);
-//        estadoFalha = true;
-//        if(Falha_erro==1)
-//        {
-//            ui->falha->setIcon(*falha);
-//        }
-//    }
-//    else
-//    {
-//        ui->falha->setIcon(*falha);
-//        estadoFalha = false;
-//    }
-}
 
 
 //Função Parar Sistema
@@ -248,6 +234,9 @@ void Dialog::on_pare_clicked()
         estadoPare = true;
     }
 }
+
+
+//====================Configuração Acionamento motor B ================================
 
 
 //função acionar motor B

@@ -41,9 +41,6 @@ public:
 private slots:
     void on_sent_clicked();
     void readSerial();
-    void on_start_pressed();
-
-    void on_falha_clicked();
 
     void on_stop_clicked();
 
