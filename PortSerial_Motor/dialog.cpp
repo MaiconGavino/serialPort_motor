@@ -198,7 +198,7 @@ void Dialog::on_start_clicked()
                 arduino->write("1\n");
                 ui->sent->setIcon(sentidoOff);
             }
-            else
+            else if(startMotor==2)
             {
                 arduino->write("2\n");
                 qDebug() << "envio";
@@ -249,25 +249,27 @@ void Dialog::on_pare_clicked()
     }
 }
 
+
+//função acionar motor B
 void Dialog::on_startB_clicked()
 {
     if(acaoStopB == 0){
     if(!estadoStart)
     {
-        ui->start->setIcon(startOff);
+        ui->startB->setIcon(startOff);
         estadoStart = false;
-        ui->pare->setIcon(pareOff);
+        ui->pareB->setIcon(pareOff);
         contOn = 0;
         if(arduino->isWritable())
         {
             if(startMotor==3)
             {
                 arduino->write("3\n");
-                ui->sent->setIcon(sentidoOff);
+                ui->sentB->setIcon(sentidoOff);
             }
-            else
+            else if(startMotor==4)
             {
-                arduino->write("3\n");
+                arduino->write("4\n");
                 qDebug() << "envio";
             }
         }
@@ -284,5 +286,22 @@ void Dialog::on_startB_clicked()
         ui->start->setIcon(*start);
         estadoStart = true;
     }
+    }
+}
+
+
+void Dialog::on_sentB_clicked()
+{
+    if(!estadoSent)
+    {
+        ui->sentB->setIcon(sentidoOff);
+        estadoSent = true;
+        startMotor=3;
+    }
+    else
+    {
+        ui->sentB->setIcon(*sentido);
+        estadoSent=false;
+        startMotor = 4;
     }
 }

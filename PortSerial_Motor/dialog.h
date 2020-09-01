@@ -53,6 +53,8 @@ private slots:
 
     void on_startB_clicked();
 
+    void on_sentB_clicked();
+
 private:
     Ui::Dialog *ui;
     QSerialPort *arduino;

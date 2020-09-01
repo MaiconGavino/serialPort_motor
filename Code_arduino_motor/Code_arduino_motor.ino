@@ -12,7 +12,7 @@ void loop()
   const int recebido = Serial.parseInt();
   if(Serial.available())
   {
-    if(recebido == 1)
+    if(recebido == 3)
     {
       digitalWrite(pinOut1, LOW);
       digitalWrite(pinOut2, LOW);
@@ -20,7 +20,7 @@ void loop()
       digitalWrite(pinOut1, HIGH);
       digitalWrite(pinOut2, LOW);
     }
-    else if(recebido == 2)
+    else if(recebido == 4)
     {
       digitalWrite(pinOut1, LOW);
       digitalWrite(pinOut2, LOW);
